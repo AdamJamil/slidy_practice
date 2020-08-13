@@ -8,17 +8,12 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.input.KeyCode;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import static java.lang.Math.*;
 
 public class Main extends Application {
     @Override
-    public void start(Stage primary_stage)
-    {
+    public void start(Stage primary_stage) {
         primary_stage.setTitle("slidy practice");
         Group root = new Group();
         Canvas canvas = new Canvas(490, 700);
@@ -39,16 +34,13 @@ public class Main extends Application {
             game.stats.update();
         }));
 
-        scene.setOnKeyPressed(event -> {
-            game.key_pressed(event.getCode());
-        });
+        scene.setOnKeyPressed(event -> game.key_pressed(event.getCode()));
 
         timeline.play();
     }
 
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         launch(args);
     }
 }
